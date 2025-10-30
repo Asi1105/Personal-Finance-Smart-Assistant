@@ -57,7 +57,7 @@ Based on the identified problem, our application will address the following requ
 | Feifan Zhang | Frontend Developer | Develop UI, integrate with backend APIs |
 | Zexin Han | Backend Developer | Build REST APIs, manage server logic |
 | Lili Liu | Database Specialist | Design database schema, ensure data integrity |
-| Xu Liu | QA & Documentation | Perform testing, maintain documentation |
+| Xu Liu | Backend & QA Support | feature design, Perform testing, maintain documentation |
 
 ---
 
@@ -121,5 +121,18 @@ pnpm dev
 
 ## 7. License
 This project is developed for the ELEC5619 course at The University of Sydney and is not intended for commercial use.
+
+
+<img width="1913" height="946" alt="image" src="https://github.com/user-attachments/assets/ff335719-a10e-4823-a39e-f78178ebbda8" />
+<img width="1905" height="929" alt="image" src="https://github.com/user-attachments/assets/b94a9f42-83ed-4a67-b8c7-0cf57af25746" />
+<img width="1953" height="932" alt="image" src="https://github.com/user-attachments/assets/0fdf0bcb-0f86-4ca1-bd21-e6dabc30e67d" />
+<img width="1915" height="929" alt="image" src="https://github.com/user-attachments/assets/4b946558-90d0-470b-979d-f7fdc9f9b996" />
+<img width="1910" height="938" alt="image" src="https://github.com/user-attachments/assets/bf41b21b-dd8d-40f0-842e-cd668da64b4b" />
+<img width="1914" height="933" alt="image" src="https://github.com/user-attachments/assets/d0db525a-8fc0-4bf7-a51b-b2d767f4f5d7" />
+<img width="1912" height="938" alt="image" src="https://github.com/user-attachments/assets/19f7aee5-8b51-4725-934f-9b53738383a9" />
+
+
+
+
 
 
