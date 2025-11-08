@@ -54,7 +54,7 @@ Based on the identified problem, our application will address the following requ
 | Feifan Zhang | Frontend Developer | Develop UI, integrate with backend APIs |
 | Zexin Han | Backend Developer | Build REST APIs, manage server logic |
 | Lili Liu | Database Specialist | Design database schema, ensure data integrity |
-| Xu Liu | Backend & QA Support | feature design, Perform testing, maintain documentation |
+| Xu Liu | Backend & QA Support | Feature design, Perform testing, maintain documentation |
 
 ---
 
