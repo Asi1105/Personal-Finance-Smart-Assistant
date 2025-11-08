@@ -1,9 +1,6 @@
 #  Personal Finance & Budget Tracker
-ELEC5619 Object Oriented Application Frameworks  
-Sprint 0  
-Practical 03 Group 12
 
----
+
 
 ## 1. Real-World Problem
 In the modern digital era, individuals often have multiple income sources, various expenses, and irregular spending patterns. Without proper tracking, it becomes difficult to:
