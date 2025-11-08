@@ -1,6 +1,8 @@
 #  Personal Finance & Budget Tracker
+ELEC5619 Object Oriented Application Frameworks
+Practical 03 Group 12
 
-
+---
 
 ## 1. Real-World Problem
 In the modern digital era, individuals often have multiple income sources, various expenses, and irregular spending patterns. Without proper tracking, it becomes difficult to:
@@ -39,9 +41,8 @@ Based on the identified problem, our application will address the following requ
 ## 3. Technology Stack
 - **Frontend**: React.js
 - **Backend**: Spring Boot
-- **Database**: MySQL / MongoDB 
-- **Authentication**: JWT-based authentication  
-- **Hosting**: AWS / Azure / Heroku
+- **Database**: PostgreSQL
+- **Authentication**: JWT-based authentication
 - **Version Control**: GitHub  
 - **Project Management**: JIRA
 
@@ -54,70 +55,223 @@ Based on the identified problem, our application will address the following requ
 | Feifan Zhang | Frontend Developer | Develop UI, integrate with backend APIs |
 | Zexin Han | Backend Developer | Build REST APIs, manage server logic |
 | Lili Liu | Database Specialist | Design database schema, ensure data integrity |
-| Xu Liu | Backend & QA Support | Feature design, Perform testing, maintain documentation |
+| Xu Liu | QA & Documentation | Feature design, Perform testing, maintain documentation |
+
+## 5. Dependencies and Libraries
+
+### Backend Dependencies
+- Spring Boot 3.2.5
+- Java 17
+- Spring Boot Starter Web 3.2.5
+- Spring Boot Starter Data JPA 3.2.5
+- Spring Boot Starter Security 3.2.5
+- Spring Boot Starter Actuator 3.2.5
+- PostgreSQL Driver (runtime)
+- H2 Database (runtime, for testing)
+- Lombok 1.18.30
+- JWT (jjwt-api, jjwt-impl, jjwt-jackson) 0.11.5
+- jbcrypt 0.4
+- Spring Boot DevTools (runtime)
+- Spring Security Test (test scope)
+- Spring Boot Starter Test (test scope)
+- JaCoCo Maven Plugin 0.8.11
+
+### Frontend Dependencies
+- React 19.1.1
+- React DOM 19.1.1
+- TypeScript 5.8.3
+- Vite 7.1.2
+- Tailwind CSS 4.1.12
+- Axios 1.11.0
+- React Router 7.8.2
+- React Hook Form 7.62.0
+- Zod 4.1.5
+- Zustand 5.0.8
+- React Query (TanStack Query) 5.85.5
+- Recharts 3.1.2
+- React Hot Toast 2.6.0
+- React i18next 16.1.3
+- i18next 25.6.0
+- date-fns 4.1.0
+- Lucide React 0.542.0
+- Radix UI components (Dialog, Dropdown Menu, Select, Checkbox, Label, Separator, Slot, Tabs)
+- Class Variance Authority 0.7.1
+- clsx 2.1.1
+- tailwind-merge 3.3.1
+
+### Frontend Dev Dependencies
+- Vite React SWC Plugin 4.0.0
+- ESLint 9.33.0
+- TypeScript ESLint 8.39.1
+- Rollup 4.28.1
 
 ---
 
-## 5. Sprint 0 Deliverables
-- GitHub Organisation & Repository created and all members added.  
-- README document completed with problem statement, key requirements, and team roles.  
-- JIRA project created with Sprint 0 tasks, descriptions, assignees, and due dates.
+## 6. Project Features
+
+The Personal Finance & Budget Tracker application provides the following functionalities:
+
+### User Authentication
+- User registration with secure password hashing
+- User login with JWT token-based authentication
+- Automatic token validation and session management
+
+### Dashboard
+- Overview of total account balance and saved amount
+- Monthly spending statistics with trend indicators
+- Budget utilization percentage across categories
+- Savings goal progress visualization
+- Recent transaction history
+- Quick access to key financial metrics
+
+### Expense Management
+- Add new expenses with category, amount, date, and notes
+- Edit existing expense records
+- View all expenses in a categorized list
+- Filter expenses by date range and category
+- Expense categorization (Food & Dining, Transportation, Entertainment, Shopping, Bills & Utilities, Healthcare, Travel, Education, Other)
+
+### Budget Management
+- Create budgets for specific categories and time periods
+- Set monthly or yearly budget limits
+- Edit existing budgets
+- View budget utilization percentages
+- Visual indicators for budgets nearing or exceeding limits
+- Budget tracking across multiple categories
+
+### Savings Management
+- Set savings goals with target amounts
+- Track progress toward savings goals
+- Save money from account balance to savings
+- Unsave money from savings back to account balance
+- View complete savings history with timestamps
+- Savings goal progress tracking with percentage indicators
+
+### Financial Reports
+- Monthly income and expense reports
+- Category-wise spending analysis
+- Budget comparison reports
+- Spending trends over time
+- Interactive charts and visualizations using Recharts
+
+### Deposits
+- Record incoming deposits to account balance
+- Add descriptions to deposit transactions
+- Automatic balance updates
+
+### Settings
+- User account settings management
+- Application preferences configuration
+
+All features are protected by authentication, ensuring that users can only access their own financial data.
 
 ---
 
-## 6. Developing Guide
+## 7. Quick Start Guide
 
-### Backend
+### Prerequisites
 
-1. Make sure you have JDK 17+ and Maven installed.
 
-2. Configure your database connection in
+Backend:
+- JDK 17 or higher
+- Maven 3.6 or higher
+- PostgreSQL database server
+
+Frontend:
+- Node.js v22 (recommended) or compatible version
+- pnpm package manager
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+```bash
+cd backend
 ```
-src/main/resources/application.properties
+
+2. Create the database:
+   - Start your PostgreSQL server
+   - Create a new database named `accounting_db` (or update the connection string in the properties file)
+
+3. Configure database connection:
+   - Create or update `src/main/resources/application-local.properties`
+   - Set your database connection details:
 ```
-3. Start your database service and ensure it is running.
-   
-4. Run the backend:
-```
-Run BackendApplication.java
-```
-5. The backend will start at:
-```
-http://localhost:8080
+spring.datasource.url=jdbc:postgresql://localhost:5432/accounting_db
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=org.postgresql.Driver
 ```
 
+4. Build the project:
+```bash
+mvn clean install
+```
 
-   
-### Frontend
+5. Run the backend application:
+   - Option 1: Run from IDE by executing `BackendApplication.java`
+   - Option 2: Use Maven command:
+```bash
+mvn spring-boot:run
+```
 
-0. Make sure you have `Node.js` (v22 recommended) and `pnpm` installed globally:
+6. Verify the backend is running:
+   - The backend should start at `http://localhost:8080`
+   - Check the health endpoint at `http://localhost:8080/actuator/health`
 
+### Frontend Setup
+
+1. Install pnpm globally (if not already installed):
 ```bash
 npm install -g pnpm
 ```
 
-1. Clone the repo, then install dependencies:
-
+2. Navigate to the frontend directory:
 ```bash
-cd ELEC5619_Practical03_Group_12/frontend
+cd frontend
+```
+
+3. Install dependencies:
+```bash
 pnpm install
 ```
-```bash
-pnpm add i18next react-i18next
-```
 
-2. Start the dev server:
-
+4. Start the development server:
 ```bash
 pnpm dev
 ```
 
-3. Open the app at `http://localhost:5173`
+5. Access the application:
+   - Open your browser and navigate to `http://localhost:5173`
 
+### Running Tests
+
+Backend tests:
+```bash
+cd backend
+mvn test
+```
+
+To generate JaCoCo coverage report:
+```bash
+mvn clean test jacoco:report
+```
+
+The coverage report will be available at `backend/target/site/jacoco/index.html`
+
+### Initial Setup
+
+1. Start both backend and frontend servers
+2. Open the frontend application in your browser
+3. Register a new user account using the registration page
+4. Log in with your credentials
+5. Begin using the application to track your finances
 ---
 
-## 7. License
+## 9. License
 This project is developed for the ELEC5619 course at The University of Sydney and is not intended for commercial use.
+
+
+
 
 
 <img width="1913" height="946" alt="image" src="https://github.com/user-attachments/assets/ff335719-a10e-4823-a39e-f78178ebbda8" />
